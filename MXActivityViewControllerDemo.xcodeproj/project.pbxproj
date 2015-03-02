@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D0641190AC9DF84CA5DE932 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED59C05A7D3C647BC97939D /* libPods.a */; };
+		AF90F2081AA4910400F5B2BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF90F2071AA4910400F5B2BA /* main.m */; };
+		AF90F20B1AA4910400F5B2BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF90F20A1AA4910400F5B2BA /* AppDelegate.m */; };
+		AF90F20E1AA4910400F5B2BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF90F20D1AA4910400F5B2BA /* ViewController.m */; };
+		AF90F2111AA4910400F5B2BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF90F20F1AA4910400F5B2BA /* Main.storyboard */; };
+		AF90F2131AA4910400F5B2BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF90F2121AA4910400F5B2BA /* Images.xcassets */; };
+		AF90F2161AA4910400F5B2BA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF90F2141AA4910400F5B2BA /* LaunchScreen.xib */; };
+		AF90F2221AA4910400F5B2BA /* MXActivityViewControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF90F2211AA4910400F5B2BA /* MXActivityViewControllerDemoTests.m */; };
+		AF90F2341AA4914A00F5B2BA /* MXActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF90F22D1AA4914A00F5B2BA /* MXActivityView.m */; };
+		AF90F2351AA4914A00F5B2BA /* MXMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF90F22F1AA4914A00F5B2BA /* MXMenuViewController.m */; };
+		AF90F2361AA4914A00F5B2BA /* MXUIActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF90F2311AA4914A00F5B2BA /* MXUIActivityViewController.m */; };
+		AF90F2371AA4914A00F5B2BA /* MXUIActivityWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = AF90F2331AA4914A00F5B2BA /* MXUIActivityWindow.m */; };
+		AF90F24C1AA4947600F5B2BA /* Share_Copylink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F2391AA4947600F5B2BA /* Share_Copylink@2x.png */; };
+		AF90F24D1AA4947600F5B2BA /* Share_Douban@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F23A1AA4947600F5B2BA /* Share_Douban@2x.png */; };
+		AF90F24E1AA4947600F5B2BA /* Share_Email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F23B1AA4947600F5B2BA /* Share_Email@2x.png */; };
+		AF90F24F1AA4947600F5B2BA /* Share_Evernote@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F23C1AA4947600F5B2BA /* Share_Evernote@2x.png */; };
+		AF90F2501AA4947600F5B2BA /* Share_Facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F23D1AA4947600F5B2BA /* Share_Facebook@2x.png */; };
+		AF90F2511AA4947600F5B2BA /* Share_Instapaper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F23E1AA4947600F5B2BA /* Share_Instapaper@2x.png */; };
+		AF90F2521AA4947600F5B2BA /* Share_JS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F23F1AA4947600F5B2BA /* Share_JS@2x.png */; };
+		AF90F2531AA4947600F5B2BA /* Share_Message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F2401AA4947600F5B2BA /* Share_Message@2x.png */; };
+		AF90F2541AA4947700F5B2BA /* Share_Pocket@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F2411AA4947600F5B2BA /* Share_Pocket@2x.png */; };
+		AF90F2551AA4947700F5B2BA /* Share_QQ@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F2421AA4947600F5B2BA /* Share_QQ@2x.png */; };
+		AF90F2561AA4947700F5B2BA /* Share_Readability@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F2431AA4947600F5B2BA /* Share_Readability@2x.png */; };
+		AF90F2571AA4947700F5B2BA /* Share_Renren@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F2441AA4947600F5B2BA /* Share_Renren@2x.png */; };
+		AF90F2581AA4947700F5B2BA /* Share_Sina@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F2451AA4947600F5B2BA /* Share_Sina@2x.png */; };
+		AF90F2591AA4947700F5B2BA /* Share_Tencent@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F2461AA4947600F5B2BA /* Share_Tencent@2x.png */; };
+		AF90F25A1AA4947700F5B2BA /* Share_Twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F2471AA4947600F5B2BA /* Share_Twitter@2x.png */; };
+		AF90F25B1AA4947700F5B2BA /* Share_WeChat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F2481AA4947600F5B2BA /* Share_WeChat@2x.png */; };
+		AF90F25C1AA4947700F5B2BA /* Share_WeChat_Moments@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F2491AA4947600F5B2BA /* Share_WeChat_Moments@2x.png */; };
+		AF90F25D1AA4947700F5B2BA /* Share_Weixin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F24A1AA4947600F5B2BA /* Share_Weixin@2x.png */; };
+		AF90F25E1AA4947700F5B2BA /* Share_YoudaoNote@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF90F24B1AA4947600F5B2BA /* Share_YoudaoNote@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF90F21C1AA4910400F5B2BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF90F1FA1AA4910300F5B2BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF90F2011AA4910400F5B2BA;
+			remoteInfo = MXActivityViewControllerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4E8F7A897B630265678467B8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8ED59C05A7D3C647BC97939D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF90F2021AA4910400F5B2BA /* MXActivityViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MXActivityViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF90F2061AA4910400F5B2BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF90F2071AA4910400F5B2BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AF90F2091AA4910400F5B2BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AF90F20A1AA4910400F5B2BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AF90F20C1AA4910400F5B2BA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AF90F20D1AA4910400F5B2BA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AF90F2101AA4910400F5B2BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF90F2121AA4910400F5B2BA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AF90F2151AA4910400F5B2BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		AF90F21B1AA4910400F5B2BA /* MXActivityViewControllerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MXActivityViewControllerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF90F2201AA4910400F5B2BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF90F2211AA4910400F5B2BA /* MXActivityViewControllerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXActivityViewControllerDemoTests.m; sourceTree = "<group>"; };
+		AF90F22C1AA4914A00F5B2BA /* MXActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXActivityView.h; sourceTree = "<group>"; };
+		AF90F22D1AA4914A00F5B2BA /* MXActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXActivityView.m; sourceTree = "<group>"; };
+		AF90F22E1AA4914A00F5B2BA /* MXMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXMenuViewController.h; sourceTree = "<group>"; };
+		AF90F22F1AA4914A00F5B2BA /* MXMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXMenuViewController.m; sourceTree = "<group>"; };
+		AF90F2301AA4914A00F5B2BA /* MXUIActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXUIActivityViewController.h; sourceTree = "<group>"; };
+		AF90F2311AA4914A00F5B2BA /* MXUIActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXUIActivityViewController.m; sourceTree = "<group>"; };
+		AF90F2321AA4914A00F5B2BA /* MXUIActivityWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXUIActivityWindow.h; sourceTree = "<group>"; };
+		AF90F2331AA4914A00F5B2BA /* MXUIActivityWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXUIActivityWindow.m; sourceTree = "<group>"; };
+		AF90F2391AA4947600F5B2BA /* Share_Copylink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_Copylink@2x.png"; sourceTree = "<group>"; };
+		AF90F23A1AA4947600F5B2BA /* Share_Douban@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_Douban@2x.png"; sourceTree = "<group>"; };
+		AF90F23B1AA4947600F5B2BA /* Share_Email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_Email@2x.png"; sourceTree = "<group>"; };
+		AF90F23C1AA4947600F5B2BA /* Share_Evernote@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_Evernote@2x.png"; sourceTree = "<group>"; };
+		AF90F23D1AA4947600F5B2BA /* Share_Facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_Facebook@2x.png"; sourceTree = "<group>"; };
+		AF90F23E1AA4947600F5B2BA /* Share_Instapaper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_Instapaper@2x.png"; sourceTree = "<group>"; };
+		AF90F23F1AA4947600F5B2BA /* Share_JS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_JS@2x.png"; sourceTree = "<group>"; };
+		AF90F2401AA4947600F5B2BA /* Share_Message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_Message@2x.png"; sourceTree = "<group>"; };
+		AF90F2411AA4947600F5B2BA /* Share_Pocket@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_Pocket@2x.png"; sourceTree = "<group>"; };
+		AF90F2421AA4947600F5B2BA /* Share_QQ@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_QQ@2x.png"; sourceTree = "<group>"; };
+		AF90F2431AA4947600F5B2BA /* Share_Readability@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_Readability@2x.png"; sourceTree = "<group>"; };
+		AF90F2441AA4947600F5B2BA /* Share_Renren@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_Renren@2x.png"; sourceTree = "<group>"; };
+		AF90F2451AA4947600F5B2BA /* Share_Sina@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_Sina@2x.png"; sourceTree = "<group>"; };
+		AF90F2461AA4947600F5B2BA /* Share_Tencent@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_Tencent@2x.png"; sourceTree = "<group>"; };
+		AF90F2471AA4947600F5B2BA /* Share_Twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_Twitter@2x.png"; sourceTree = "<group>"; };
+		AF90F2481AA4947600F5B2BA /* Share_WeChat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_WeChat@2x.png"; sourceTree = "<group>"; };
+		AF90F2491AA4947600F5B2BA /* Share_WeChat_Moments@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_WeChat_Moments@2x.png"; sourceTree = "<group>"; };
+		AF90F24A1AA4947600F5B2BA /* Share_Weixin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_Weixin@2x.png"; sourceTree = "<group>"; };
+		AF90F24B1AA4947600F5B2BA /* Share_YoudaoNote@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_YoudaoNote@2x.png"; sourceTree = "<group>"; };
+		F1EB5637CEF386975991E289 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF90F1FF1AA4910400F5B2BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D0641190AC9DF84CA5DE932 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF90F2181AA4910400F5B2BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		46B83CCCD020C7CB2123EFE0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1EB5637CEF386975991E289 /* Pods.debug.xcconfig */,
+				4E8F7A897B630265678467B8 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9773D659550CB40B55C8EAC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8ED59C05A7D3C647BC97939D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF90F1F91AA4910300F5B2BA = {
+			isa = PBXGroup;
+			children = (
+				AF90F2041AA4910400F5B2BA /* MXActivityViewControllerDemo */,
+				AF90F21E1AA4910400F5B2BA /* MXActivityViewControllerDemoTests */,
+				AF90F2031AA4910400F5B2BA /* Products */,
+				46B83CCCD020C7CB2123EFE0 /* Pods */,
+				9773D659550CB40B55C8EAC3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AF90F2031AA4910400F5B2BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF90F2021AA4910400F5B2BA /* MXActivityViewControllerDemo.app */,
+				AF90F21B1AA4910400F5B2BA /* MXActivityViewControllerDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF90F2041AA4910400F5B2BA /* MXActivityViewControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				AF90F22B1AA4914A00F5B2BA /* MXActivityViewController */,
+				AF90F2091AA4910400F5B2BA /* AppDelegate.h */,
+				AF90F20A1AA4910400F5B2BA /* AppDelegate.m */,
+				AF90F20C1AA4910400F5B2BA /* ViewController.h */,
+				AF90F20D1AA4910400F5B2BA /* ViewController.m */,
+				AF90F20F1AA4910400F5B2BA /* Main.storyboard */,
+				AF90F2121AA4910400F5B2BA /* Images.xcassets */,
+				AF90F2141AA4910400F5B2BA /* LaunchScreen.xib */,
+				AF90F2051AA4910400F5B2BA /* Supporting Files */,
+			);
+			path = MXActivityViewControllerDemo;
+			sourceTree = "<group>";
+		};
+		AF90F2051AA4910400F5B2BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF90F2061AA4910400F5B2BA /* Info.plist */,
+				AF90F2071AA4910400F5B2BA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF90F21E1AA4910400F5B2BA /* MXActivityViewControllerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF90F2211AA4910400F5B2BA /* MXActivityViewControllerDemoTests.m */,
+				AF90F21F1AA4910400F5B2BA /* Supporting Files */,
+			);
+			path = MXActivityViewControllerDemoTests;
+			sourceTree = "<group>";
+		};
+		AF90F21F1AA4910400F5B2BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF90F2201AA4910400F5B2BA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF90F22B1AA4914A00F5B2BA /* MXActivityViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AF90F2381AA4947600F5B2BA /* images */,
+				AF90F22C1AA4914A00F5B2BA /* MXActivityView.h */,
+				AF90F22D1AA4914A00F5B2BA /* MXActivityView.m */,
+				AF90F22E1AA4914A00F5B2BA /* MXMenuViewController.h */,
+				AF90F22F1AA4914A00F5B2BA /* MXMenuViewController.m */,
+				AF90F2301AA4914A00F5B2BA /* MXUIActivityViewController.h */,
+				AF90F2311AA4914A00F5B2BA /* MXUIActivityViewController.m */,
+				AF90F2321AA4914A00F5B2BA /* MXUIActivityWindow.h */,
+				AF90F2331AA4914A00F5B2BA /* MXUIActivityWindow.m */,
+			);
+			path = MXActivityViewController;
+			sourceTree = SOURCE_ROOT;
+		};
+		AF90F2381AA4947600F5B2BA /* images */ = {
+			isa = PBXGroup;
+			children = (
+				AF90F2391AA4947600F5B2BA /* Share_Copylink@2x.png */,
+				AF90F23A1AA4947600F5B2BA /* Share_Douban@2x.png */,
+				AF90F23B1AA4947600F5B2BA /* Share_Email@2x.png */,
+				AF90F23C1AA4947600F5B2BA /* Share_Evernote@2x.png */,
+				AF90F23D1AA4947600F5B2BA /* Share_Facebook@2x.png */,
+				AF90F23E1AA4947600F5B2BA /* Share_Instapaper@2x.png */,
+				AF90F23F1AA4947600F5B2BA /* Share_JS@2x.png */,
+				AF90F2401AA4947600F5B2BA /* Share_Message@2x.png */,
+				AF90F2411AA4947600F5B2BA /* Share_Pocket@2x.png */,
+				AF90F2421AA4947600F5B2BA /* Share_QQ@2x.png */,
+				AF90F2431AA4947600F5B2BA /* Share_Readability@2x.png */,
+				AF90F2441AA4947600F5B2BA /* Share_Renren@2x.png */,
+				AF90F2451AA4947600F5B2BA /* Share_Sina@2x.png */,
+				AF90F2461AA4947600F5B2BA /* Share_Tencent@2x.png */,
+				AF90F2471AA4947600F5B2BA /* Share_Twitter@2x.png */,
+				AF90F2481AA4947600F5B2BA /* Share_WeChat@2x.png */,
+				AF90F2491AA4947600F5B2BA /* Share_WeChat_Moments@2x.png */,
+				AF90F24A1AA4947600F5B2BA /* Share_Weixin@2x.png */,
+				AF90F24B1AA4947600F5B2BA /* Share_YoudaoNote@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF90F2011AA4910400F5B2BA /* MXActivityViewControllerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF90F2251AA4910400F5B2BA /* Build configuration list for PBXNativeTarget "MXActivityViewControllerDemo" */;
+			buildPhases = (
+				16CF54C26C42F32F5C8DCACD /* Check Pods Manifest.lock */,
+				AF90F1FE1AA4910400F5B2BA /* Sources */,
+				AF90F1FF1AA4910400F5B2BA /* Frameworks */,
+				AF90F2001AA4910400F5B2BA /* Resources */,
+				5C97A4EF4B65E90A8509331F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MXActivityViewControllerDemo;
+			productName = MXActivityViewControllerDemo;
+			productReference = AF90F2021AA4910400F5B2BA /* MXActivityViewControllerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF90F21A1AA4910400F5B2BA /* MXActivityViewControllerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF90F2281AA4910400F5B2BA /* Build configuration list for PBXNativeTarget "MXActivityViewControllerDemoTests" */;
+			buildPhases = (
+				AF90F2171AA4910400F5B2BA /* Sources */,
+				AF90F2181AA4910400F5B2BA /* Frameworks */,
+				AF90F2191AA4910400F5B2BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF90F21D1AA4910400F5B2BA /* PBXTargetDependency */,
+			);
+			name = MXActivityViewControllerDemoTests;
+			productName = MXActivityViewControllerDemoTests;
+			productReference = AF90F21B1AA4910400F5B2BA /* MXActivityViewControllerDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF90F1FA1AA4910300F5B2BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = MexiQQ;
+				TargetAttributes = {
+					AF90F2011AA4910400F5B2BA = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					AF90F21A1AA4910400F5B2BA = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = AF90F2011AA4910400F5B2BA;
+					};
+				};
+			};
+			buildConfigurationList = AF90F1FD1AA4910300F5B2BA /* Build configuration list for PBXProject "MXActivityViewControllerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF90F1F91AA4910300F5B2BA;
+			productRefGroup = AF90F2031AA4910400F5B2BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF90F2011AA4910400F5B2BA /* MXActivityViewControllerDemo */,
+				AF90F21A1AA4910400F5B2BA /* MXActivityViewControllerDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF90F2001AA4910400F5B2BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF90F25C1AA4947700F5B2BA /* Share_WeChat_Moments@2x.png in Resources */,
+				AF90F2571AA4947700F5B2BA /* Share_Renren@2x.png in Resources */,
+				AF90F25D1AA4947700F5B2BA /* Share_Weixin@2x.png in Resources */,
+				AF90F2551AA4947700F5B2BA /* Share_QQ@2x.png in Resources */,
+				AF90F2591AA4947700F5B2BA /* Share_Tencent@2x.png in Resources */,
+				AF90F2561AA4947700F5B2BA /* Share_Readability@2x.png in Resources */,
+				AF90F25B1AA4947700F5B2BA /* Share_WeChat@2x.png in Resources */,
+				AF90F2541AA4947700F5B2BA /* Share_Pocket@2x.png in Resources */,
+				AF90F24D1AA4947600F5B2BA /* Share_Douban@2x.png in Resources */,
+				AF90F24E1AA4947600F5B2BA /* Share_Email@2x.png in Resources */,
+				AF90F2111AA4910400F5B2BA /* Main.storyboard in Resources */,
+				AF90F2511AA4947600F5B2BA /* Share_Instapaper@2x.png in Resources */,
+				AF90F24C1AA4947600F5B2BA /* Share_Copylink@2x.png in Resources */,
+				AF90F2521AA4947600F5B2BA /* Share_JS@2x.png in Resources */,
+				AF90F2161AA4910400F5B2BA /* LaunchScreen.xib in Resources */,
+				AF90F2581AA4947700F5B2BA /* Share_Sina@2x.png in Resources */,
+				AF90F24F1AA4947600F5B2BA /* Share_Evernote@2x.png in Resources */,
+				AF90F25E1AA4947700F5B2BA /* Share_YoudaoNote@2x.png in Resources */,
+				AF90F2501AA4947600F5B2BA /* Share_Facebook@2x.png in Resources */,
+				AF90F2531AA4947600F5B2BA /* Share_Message@2x.png in Resources */,
+				AF90F25A1AA4947700F5B2BA /* Share_Twitter@2x.png in Resources */,
+				AF90F2131AA4910400F5B2BA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF90F2191AA4910400F5B2BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16CF54C26C42F32F5C8DCACD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5C97A4EF4B65E90A8509331F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF90F1FE1AA4910400F5B2BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF90F2371AA4914A00F5B2BA /* MXUIActivityWindow.m in Sources */,
+				AF90F2351AA4914A00F5B2BA /* MXMenuViewController.m in Sources */,
+				AF90F2341AA4914A00F5B2BA /* MXActivityView.m in Sources */,
+				AF90F2361AA4914A00F5B2BA /* MXUIActivityViewController.m in Sources */,
+				AF90F20E1AA4910400F5B2BA /* ViewController.m in Sources */,
+				AF90F20B1AA4910400F5B2BA /* AppDelegate.m in Sources */,
+				AF90F2081AA4910400F5B2BA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF90F2171AA4910400F5B2BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF90F2221AA4910400F5B2BA /* MXActivityViewControllerDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF90F21D1AA4910400F5B2BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF90F2011AA4910400F5B2BA /* MXActivityViewControllerDemo */;
+			targetProxy = AF90F21C1AA4910400F5B2BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF90F20F1AA4910400F5B2BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF90F2101AA4910400F5B2BA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF90F2141AA4910400F5B2BA /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF90F2151AA4910400F5B2BA /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF90F2231AA4910400F5B2BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AF90F2241AA4910400F5B2BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF90F2261AA4910400F5B2BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1EB5637CEF386975991E289 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MXActivityViewControllerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AF90F2271AA4910400F5B2BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E8F7A897B630265678467B8 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MXActivityViewControllerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AF90F2291AA4910400F5B2BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MXActivityViewControllerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MXActivityViewControllerDemo.app/MXActivityViewControllerDemo";
+			};
+			name = Debug;
+		};
+		AF90F22A1AA4910400F5B2BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MXActivityViewControllerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MXActivityViewControllerDemo.app/MXActivityViewControllerDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF90F1FD1AA4910300F5B2BA /* Build configuration list for PBXProject "MXActivityViewControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF90F2231AA4910400F5B2BA /* Debug */,
+				AF90F2241AA4910400F5B2BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF90F2251AA4910400F5B2BA /* Build configuration list for PBXNativeTarget "MXActivityViewControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF90F2261AA4910400F5B2BA /* Debug */,
+				AF90F2271AA4910400F5B2BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF90F2281AA4910400F5B2BA /* Build configuration list for PBXNativeTarget "MXActivityViewControllerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF90F2291AA4910400F5B2BA /* Debug */,
+				AF90F22A1AA4910400F5B2BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF90F1FA1AA4910300F5B2BA /* Project object */;
+}
