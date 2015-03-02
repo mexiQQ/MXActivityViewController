@@ -7,3 +7,6 @@
 ### Dependency 
 
 - purelayout ~> 2.0.5
+### License
+
+- MIT
