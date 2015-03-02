@@ -2,5 +2,5 @@
 
 ### Effect
 
-![](iw)
+![](https://github.com/mexiQQ/MXActivityViewController/blob/master/demo.png)
 
