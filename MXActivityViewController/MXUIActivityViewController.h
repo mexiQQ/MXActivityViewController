@@ -11,4 +11,5 @@
 @interface MXUIActivityViewController
     : UIViewController <UIPageViewControllerDataSource>
 @property(strong, nonatomic) UIPageViewController *pageViewController;
+- (instancetype)initWithImages:(NSArray *)images titles:(NSArray *)titles;
 @end

@@ -10,4 +10,6 @@
 
 @interface MXMenuViewController : UIViewController
 @property(nonatomic, assign) NSInteger *pageIndex;
+@property(nonatomic, strong) NSMutableArray *images;
+@property(nonatomic, strong) NSMutableArray *titles;
 @end

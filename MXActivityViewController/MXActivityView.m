@@ -6,6 +6,11 @@
 //  Copyright (c) 2015年 MexiQQ. All rights reserved.
 //
 
+#define ACTIVITYVIEW_WIDTH                                                     \
+  (([UIScreen mainScreen].bounds.size.width - 16 * 5) / 4)
+#define ACTIVITYVIEW_HEIGHT                                                    \
+  (([UIScreen mainScreen].bounds.size.height / 568) * 90)
+
 #import "MXActivityView.h"
 #import "purelayout.h"
 @interface MXActivityView ()
@@ -20,16 +25,24 @@
   [view addSubview:self.imageView];
   [view addSubview:self.title];
 
-  [view autoSetDimensionsToSize:CGSizeMake(60, 90.0)];
-  [self.imageView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:1.0];
-  [self.imageView autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:2.5];
-  [self.imageView autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:2.5];
-  [self.imageView autoSetDimensionsToSize:CGSizeMake(55, 55)];
+  [view autoSetDimensionsToSize:CGSizeMake(ACTIVITYVIEW_WIDTH,
+                                           ACTIVITYVIEW_HEIGHT)];
+  [self.imageView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:0];
+  [self.imageView autoPinEdgeToSuperviewEdge:ALEdgeLeft
+                                   withInset:(ACTIVITYVIEW_WIDTH / 24)];
+  [self.imageView autoPinEdgeToSuperviewEdge:ALEdgeRight
+                                   withInset:(ACTIVITYVIEW_WIDTH / 24)];
+  [self.imageView
+      autoSetDimensionsToSize:CGSizeMake((ACTIVITYVIEW_WIDTH / 12) * 11,
+                                         (ACTIVITYVIEW_WIDTH / 12) * 11)];
 
   [self.title autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.imageView];
   [self.title autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:0];
   [self.title autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:0];
-  [self.title autoSetDimension:ALDimensionHeight toSize:20.0];
+  [self.title
+      autoSetDimension:ALDimensionHeight
+                toSize:((ACTIVITYVIEW_HEIGHT - (ACTIVITYVIEW_WIDTH / 12) * 11) /
+                        7 * 4)];
 
   return view;
 }
@@ -53,7 +66,7 @@
   if (!_title) {
     _title = [UILabel newAutoLayoutView];
     _title.text = _titleName;
-    _title.font = [UIFont fontWithName:@"Arial" size:14.0];
+    _title.font = [UIFont fontWithName:@"Arial" size:13.0];
     _title.textColor = [UIColor grayColor];
     _title.textAlignment = NSTextAlignmentCenter;
   }

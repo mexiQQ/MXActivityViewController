@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^activityActionBlock)(int);
 @interface MXUIActivityWindow : UIWindow
-+ (MXUIActivityWindow *)shareInstance;
++ (MXUIActivityWindow *)shareInstance:(NSArray *)images
+                                title:(NSArray *)titles
+                  activityActionBlock:(activityActionBlock)activityActionBlock;
+@property(nonatomic, strong) activityActionBlock activityActionBlock;
 - (void)show;
 @end

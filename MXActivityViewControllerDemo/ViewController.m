@@ -26,6 +26,35 @@
 }
 
 - (IBAction)shareAction:(id)sender {
-  [[MXUIActivityWindow shareInstance] show];
+  NSArray *images = @[
+    @"Share_Sina",
+    @"Share_WeChat",
+    @"Share_WeChat_Moments",
+    @"Share_QQ",
+    @"Share_Evernote",
+    @"Share_Pocket",
+    @"Share_YoudaoNote",
+    @"Share_Copylink",
+    @"Share_Email",
+    @"Share_Message",
+    @"Share_Twitter"
+  ];
+
+  NSArray *titles = @[
+    @"新浪微博",
+    @"微信好友",
+    @"朋友圈",
+    @"QQ",
+    @"印象笔记",
+    @"Pocket",
+    @"有道笔记",
+    @"复制链接",
+    @"电子邮件",
+    @"信息",
+    @"Twitter"
+  ];
+  [[MXUIActivityWindow shareInstance:images
+                               title:titles
+                 activityActionBlock:nil] show];
 }
 @end

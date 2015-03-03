@@ -6,6 +6,9 @@
 //  Copyright (c) 2015年 MexiQQ. All rights reserved.
 //
 
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
 #import "MXUIActivityViewController.h"
 #import "purelayout.h"
 #import "MXActivityView.h"
@@ -16,14 +19,60 @@
 @property(nonatomic, strong) UIButton *reportButton;
 @property(nonatomic, strong) UIButton *cancelButton;
 @property(nonatomic, assign) BOOL didSetupConstraints;
+
+@property(nonatomic, strong) NSMutableArray *singlePageImages;
+@property(nonatomic, strong) NSMutableArray *singlePageTitles;
+
+@property(nonatomic, strong) NSArray *images;
+@property(nonatomic, strong) NSArray *titles;
 @end
 
 @implementation MXUIActivityViewController
 
-- (void)loadView {
-  self.view = [[UIView new] initWithFrame:CGRectMake(0, 0, 320, 350)];
+- (instancetype)initWithImages:(NSArray *)images titles:(NSArray *)titles {
+  self = [super init];
+  if (self) {
+    self.images = images;
+    self.titles = titles;
+  }
+  return self;
+}
+
+- (void)viewDidLoad {
+  self.view =
+      [[UIView new] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,
+                                             (SCREEN_HEIGHT / 568) * 350)];
   self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 
+  self.singlePageImages = [[NSMutableArray alloc] init];
+  self.singlePageTitles = [[NSMutableArray alloc] init];
+
+  // 计算 pageContentViewController 内容
+  if (self.images.count > 16) {
+    NSIndexSet *s1 = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 8)];
+    NSIndexSet *s2 = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(8, 8)];
+    NSIndexSet *s3 = [NSIndexSet
+        indexSetWithIndexesInRange:NSMakeRange(16, self.images.count - 16)];
+    [self.singlePageImages addObject:[self.images objectsAtIndexes:s1]];
+    [self.singlePageImages addObject:[self.images objectsAtIndexes:s2]];
+    [self.singlePageImages addObject:[self.images objectsAtIndexes:s3]];
+    [self.singlePageTitles addObject:[self.titles objectsAtIndexes:s1]];
+    [self.singlePageTitles addObject:[self.titles objectsAtIndexes:s2]];
+    [self.singlePageTitles addObject:[self.titles objectsAtIndexes:s3]];
+  } else if (8 < self.images.count < 17) {
+    NSIndexSet *s1 = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 8)];
+    NSIndexSet *s2 = [NSIndexSet
+        indexSetWithIndexesInRange:NSMakeRange(8, self.images.count - 8)];
+    [self.singlePageImages addObject:[self.images objectsAtIndexes:s1]];
+    [self.singlePageImages addObject:[self.images objectsAtIndexes:s2]];
+    [self.singlePageTitles addObject:[self.titles objectsAtIndexes:s1]];
+    [self.singlePageTitles addObject:[self.titles objectsAtIndexes:s2]];
+  } else {
+    [self.singlePageImages addObject:self.images];
+    [self.singlePageTitles addObject:self.titles];
+  }
+
+  // 添加 pageViewController
   self.pageViewController = [[UIPageViewController alloc]
       initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
         navigationOrientation:
@@ -39,9 +88,8 @@
                 animated:NO
               completion:nil];
 
-  //  self.pageViewController.view = [UIView newAutoLayoutView];
   self.pageViewController.view.frame =
-      CGRectMake(0, 0, self.view.frame.size.width, 180);
+      CGRectMake(0, 0, SCREEN_WIDTH, (SCREEN_HEIGHT / 568) * 180);
 
   self.pageViewController.view.backgroundColor = [UIColor clearColor];
 
@@ -49,6 +97,7 @@
   [self.view addSubview:_pageViewController.view];
   [self.pageViewController didMoveToParentViewController:self];
 
+  // 设置 pageControl 样式
   UIPageControl *pageControl = [UIPageControl appearance];
   pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
   pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
@@ -65,9 +114,14 @@
 
   MXMenuViewController *pageContentViewController =
       [[MXMenuViewController alloc] init];
-  pageContentViewController.pageIndex = index;
+  pageContentViewController.pageIndex = (NSInteger *)index;
 
-  NSLog(@"index is %d", index);
+  NSMutableArray *a = [NSMutableArray
+      arrayWithArray:[self.singlePageImages objectAtIndex:index]];
+  NSMutableArray *b = [NSMutableArray
+      arrayWithArray:[self.singlePageTitles objectAtIndex:index]];
+  pageContentViewController.images = a;
+  pageContentViewController.titles = b;
   return pageContentViewController;
 }
 
@@ -76,9 +130,7 @@
                           (UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController *)viewController {
 
-  NSUInteger index = ((MXMenuViewController *)viewController).pageIndex;
-
-  NSLog(@"index is before %d", index);
+  NSUInteger index = (int)((MXMenuViewController *)viewController).pageIndex;
 
   if ((index == 0) || (index == NSNotFound)) {
     return nil;
@@ -91,8 +143,8 @@
 - (UIViewController *)pageViewController:
                           (UIPageViewController *)pageViewController
        viewControllerAfterViewController:(UIViewController *)viewController {
-  NSUInteger index = ((MXMenuViewController *)viewController).pageIndex;
-  NSLog(@"index is after %d", index);
+  NSUInteger index = (int)((MXMenuViewController *)viewController).pageIndex;
+
   if (index == NSNotFound) {
     return nil;
   }
@@ -105,7 +157,7 @@
 
 - (NSInteger)presentationCountForPageViewController:
         (UIPageViewController *)pageViewController {
-  return 2;
+  return self.singlePageImages.count;
 }
 
 - (NSInteger)presentationIndexForPageViewController:
@@ -113,6 +165,7 @@
   return 0;
 }
 
+#pragma mark - Autolayout
 /**
  *  设置 Autolayout
  */
@@ -124,25 +177,28 @@
     [self.pageViewController.view autoPinToTopLayoutGuideOfViewController:self
                                                                 withInset:40.0];
     [self.pageViewController.view
-        autoSetDimensionsToSize:CGSizeMake(320, 200.0)];
+        autoSetDimensionsToSize:CGSizeMake(SCREEN_WIDTH,
+                                           (SCREEN_HEIGHT / 568) * 200)];
 
     [self.reportButton autoPinEdge:ALEdgeTop
                             toEdge:ALEdgeBottom
                             ofView:self.self.pageViewController.view
-                        withOffset:5.0];
+                        withOffset:(SCREEN_HEIGHT / 568) * 5];
 
     [self.reportButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:16.0];
     [self.reportButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:16.0];
-    [self.reportButton autoSetDimension:ALDimensionHeight toSize:40.0];
+    [self.reportButton autoSetDimension:ALDimensionHeight
+                                 toSize:(SCREEN_HEIGHT / 568) * 40];
 
     [self.cancelButton autoPinEdge:ALEdgeTop
                             toEdge:ALEdgeBottom
                             ofView:self.reportButton
-                        withOffset:10.0];
+                        withOffset:(SCREEN_HEIGHT / 568) * 10];
 
     [self.cancelButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:16];
     [self.cancelButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:16];
-    [self.cancelButton autoSetDimension:ALDimensionHeight toSize:40.0];
+    [self.cancelButton autoSetDimension:ALDimensionHeight
+                                 toSize:(SCREEN_HEIGHT / 568) * 40];
 
     self.didSetupConstraints = YES;
   }
@@ -185,6 +241,5 @@
 }
 
 - (IBAction)cancelShare:(id)sender {
-  [[MXUIActivityWindow shareInstance] show];
 }
 @end
