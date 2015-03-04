@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void (^activityActionBlock)(int);
 @interface MXMenuViewController : UIViewController
 @property(nonatomic, assign) NSInteger *pageIndex;
 @property(nonatomic, strong) NSMutableArray *images;
 @property(nonatomic, strong) NSMutableArray *titles;
+@property(nonatomic, strong) activityActionBlock activityActionBlock;
 @end

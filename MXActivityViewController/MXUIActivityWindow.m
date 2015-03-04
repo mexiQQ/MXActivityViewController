@@ -14,8 +14,6 @@
 #import "MXUIActivityViewController.h"
 
 @interface MXUIActivityWindow ()
-@property(nonatomic, strong) NSArray *images;
-@property(nonatomic, strong) NSArray *titles;
 @end
 
 @implementation MXUIActivityWindow
@@ -23,7 +21,9 @@ static MXUIActivityWindow *shareInstance = nil;
 
 + (MXUIActivityWindow *)shareInstance:(NSArray *)images
                                 title:(NSArray *)titles
-                  activityActionBlock:(activityActionBlock)activityActionBlock {
+                          buttonTitle:(NSString *)buttonTitle
+                  activityActionBlock:(activityActionBlock)activityActionBlock
+                    buttonActionBlock:(buttonActionBlock)buttonActionBlock {
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     shareInstance = [[MXUIActivityWindow alloc]
@@ -31,13 +31,13 @@ static MXUIActivityWindow *shareInstance = nil;
                                  (SCREEN_HEIGHT / 568) * 350)];
   });
 
-  shareInstance.images = images;
-  shareInstance.titles = titles;
-
   if (shareInstance) {
-    MXUIActivityViewController *viewController = [
-        [MXUIActivityViewController alloc] initWithImages:shareInstance.images
-                                                   titles:shareInstance.titles];
+    MXUIActivityViewController *viewController =
+        [[MXUIActivityViewController alloc] initWithImages:images
+                                                    titles:titles
+                                               buttonTitle:buttonTitle
+                                           activityHandler:activityActionBlock
+                                             buttonHandler:buttonActionBlock];
 
     shareInstance.rootViewController = viewController;
     shareInstance.backgroundColor = [UIColor greenColor];
@@ -83,4 +83,7 @@ static MXUIActivityWindow *shareInstance = nil;
   }
 }
 
++ (MXUIActivityWindow *)standardWindow {
+  return shareInstance;
+}
 @end

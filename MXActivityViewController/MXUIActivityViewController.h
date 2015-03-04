@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^activityActionBlock)(int);
+typedef void (^buttonActionBlock)();
+
 @interface MXUIActivityViewController
     : UIViewController <UIPageViewControllerDataSource>
+
 @property(strong, nonatomic) UIPageViewController *pageViewController;
-- (instancetype)initWithImages:(NSArray *)images titles:(NSArray *)titles;
+- (instancetype)initWithImages:(NSArray *)images
+                        titles:(NSArray *)titles
+                   buttonTitle:(NSString *)buttonTitle
+               activityHandler:(void (^)(int))activityBlock
+                 buttonHandler:(buttonActionBlock)buttonActionBlock;
 @end

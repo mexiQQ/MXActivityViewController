@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^activityActionBlock)(int);
 @interface MXActivityView : UIView
 @property(nonatomic, strong) NSString *imageName;
 @property(nonatomic, strong) NSString *titleName;
-- (instancetype)initwithImageName:(NSString *)imageName title:(NSString *)title;
+
+- (instancetype)initwithImageName:(NSString *)imageName
+                            title:(NSString *)title
+                            index:(NSInteger)tag
+                            block:(activityActionBlock)block;
 @end

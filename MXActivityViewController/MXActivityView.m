@@ -14,29 +14,35 @@
 #import "MXActivityView.h"
 #import "purelayout.h"
 @interface MXActivityView ()
-@property(nonatomic, strong) UIImageView *imageView;
 @property(nonatomic, strong) UILabel *title;
+@property(nonatomic, strong) UIButton *imageButton;
+@property(nonatomic, assign) NSInteger index;
+@property(nonatomic, strong) activityActionBlock block;
 @end
 
 @implementation MXActivityView
 
 - (MXActivityView *)init {
-  MXActivityView *view = (MXActivityView *)[UIView newAutoLayoutView];
-  [view addSubview:self.imageView];
+  MXActivityView *view = [super init];
+  view.translatesAutoresizingMaskIntoConstraints = NO;
   [view addSubview:self.title];
+  [view addSubview:self.imageButton];
 
   [view autoSetDimensionsToSize:CGSizeMake(ACTIVITYVIEW_WIDTH,
                                            ACTIVITYVIEW_HEIGHT)];
-  [self.imageView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:0];
-  [self.imageView autoPinEdgeToSuperviewEdge:ALEdgeLeft
-                                   withInset:(ACTIVITYVIEW_WIDTH / 24)];
-  [self.imageView autoPinEdgeToSuperviewEdge:ALEdgeRight
-                                   withInset:(ACTIVITYVIEW_WIDTH / 24)];
-  [self.imageView
+
+  [self.imageButton autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:0];
+  [self.imageButton autoPinEdgeToSuperviewEdge:ALEdgeLeft
+                                     withInset:(ACTIVITYVIEW_WIDTH / 24)];
+  [self.imageButton autoPinEdgeToSuperviewEdge:ALEdgeRight
+                                     withInset:(ACTIVITYVIEW_WIDTH / 24)];
+  [self.imageButton
       autoSetDimensionsToSize:CGSizeMake((ACTIVITYVIEW_WIDTH / 12) * 11,
                                          (ACTIVITYVIEW_WIDTH / 12) * 11)];
 
-  [self.title autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.imageView];
+  [self.title autoPinEdge:ALEdgeTop
+                   toEdge:ALEdgeBottom
+                   ofView:self.imageButton];
   [self.title autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:0];
   [self.title autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:0];
   [self.title
@@ -48,29 +54,48 @@
 }
 
 - (instancetype)initwithImageName:(NSString *)imageName
-                            title:(NSString *)title {
+                            title:(NSString *)title
+                            index:(NSInteger)tag
+                            block:(activityActionBlock)block {
   _titleName = title;
   _imageName = imageName;
+  _index = tag;
+  _block = block;
   return [self init];
 }
 
-- (UIImageView *)imageView {
-  if (!_imageView) {
-    _imageView = [UIImageView newAutoLayoutView];
-    _imageView.image = [UIImage imageNamed:_imageName];
-  }
-  return _imageView;
-}
-
 - (UILabel *)title {
-  if (!_title) {
-    _title = [UILabel newAutoLayoutView];
-    _title.text = _titleName;
-    _title.font = [UIFont fontWithName:@"Arial" size:13.0];
-    _title.textColor = [UIColor grayColor];
-    _title.textAlignment = NSTextAlignmentCenter;
+  if (![self.imageName isEqualToString:@"null"]) {
+    if (!_title) {
+      _title = [UILabel newAutoLayoutView];
+      _title.text = _titleName;
+      _title.font = [UIFont fontWithName:@"Arial" size:13.0];
+      _title.textColor = [UIColor grayColor];
+      _title.textAlignment = NSTextAlignmentCenter;
+    }
+    return _title;
+  } else {
+    return nil;
   }
-  return _title;
 }
 
+- (UIButton *)imageButton {
+  if (![self.titleName isEqualToString:@"null"]) {
+    if (!_imageButton) {
+      _imageButton = [UIButton newAutoLayoutView];
+      [_imageButton setImage:[UIImage imageNamed:_imageName]
+                    forState:UIControlStateNormal];
+      [_imageButton addTarget:self
+                       action:@selector(shareAction:)
+             forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _imageButton;
+  } else {
+    return nil;
+  }
+}
+
+- (IBAction)shareAction:(id)sender {
+  _block((int)_index);
+}
 @end

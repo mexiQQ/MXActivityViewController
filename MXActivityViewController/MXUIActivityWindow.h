@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 
 typedef void (^activityActionBlock)(int);
+typedef void (^buttonActionBlock)();
 @interface MXUIActivityWindow : UIWindow
 + (MXUIActivityWindow *)shareInstance:(NSArray *)images
                                 title:(NSArray *)titles
-                  activityActionBlock:(activityActionBlock)activityActionBlock;
-@property(nonatomic, strong) activityActionBlock activityActionBlock;
+                          buttonTitle:(NSString *)buttonTitle
+                  activityActionBlock:(activityActionBlock)activityActionBlock
+                    buttonActionBlock:(buttonActionBlock)buttonActionBlock;
 - (void)show;
++ (MXUIActivityWindow *)standardWindow;
 @end

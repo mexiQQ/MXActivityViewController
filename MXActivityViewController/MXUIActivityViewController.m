@@ -15,10 +15,14 @@
 #import "MXMenuViewController.h"
 #import "MXUIActivityWindow.h"
 @interface MXUIActivityViewController ()
+@property(nonatomic, strong) activityActionBlock activityActionBlock;
+@property(nonatomic, strong) buttonActionBlock buttonActionBlock;
+
 @property(nonatomic, strong) UILabel *titlelable;
 @property(nonatomic, strong) UIButton *reportButton;
 @property(nonatomic, strong) UIButton *cancelButton;
 @property(nonatomic, assign) BOOL didSetupConstraints;
+@property(nonatomic, strong) NSString *buttonString;
 
 @property(nonatomic, strong) NSMutableArray *singlePageImages;
 @property(nonatomic, strong) NSMutableArray *singlePageTitles;
@@ -29,11 +33,18 @@
 
 @implementation MXUIActivityViewController
 
-- (instancetype)initWithImages:(NSArray *)images titles:(NSArray *)titles {
+- (instancetype)initWithImages:(NSArray *)images
+                        titles:(NSArray *)titles
+                   buttonTitle:(NSString *)buttonTitle
+               activityHandler:(void (^)(int))activityBlock
+                 buttonHandler:(buttonActionBlock)buttonActionBlock {
   self = [super init];
   if (self) {
     self.images = images;
     self.titles = titles;
+    self.activityActionBlock = activityBlock;
+    self.buttonActionBlock = buttonActionBlock;
+    self.buttonString = buttonTitle;
   }
   return self;
 }
@@ -122,6 +133,8 @@
       arrayWithArray:[self.singlePageTitles objectAtIndex:index]];
   pageContentViewController.images = a;
   pageContentViewController.titles = b;
+  pageContentViewController.activityActionBlock = self.activityActionBlock;
+
   return pageContentViewController;
 }
 
@@ -131,11 +144,9 @@
       viewControllerBeforeViewController:(UIViewController *)viewController {
 
   NSUInteger index = (int)((MXMenuViewController *)viewController).pageIndex;
-
   if ((index == 0) || (index == NSNotFound)) {
     return nil;
   }
-
   index--;
   return [self viewControllerAtIndex:index];
 }
@@ -143,13 +154,13 @@
 - (UIViewController *)pageViewController:
                           (UIPageViewController *)pageViewController
        viewControllerAfterViewController:(UIViewController *)viewController {
-  NSUInteger index = (int)((MXMenuViewController *)viewController).pageIndex;
 
+  NSUInteger index = (int)((MXMenuViewController *)viewController).pageIndex;
   if (index == NSNotFound) {
     return nil;
   }
   index++;
-  if (index == 2) {
+  if (index == self.singlePageImages.count) {
     return nil;
   }
   return [self viewControllerAtIndex:index];
@@ -212,7 +223,10 @@
     _reportButton.backgroundColor = [UIColor whiteColor];
     [_reportButton setTitleColor:[UIColor grayColor]
                         forState:UIControlStateNormal];
-    [_reportButton setTitle:@"举报" forState:UIControlStateNormal];
+    [_reportButton setTitle:self.buttonString forState:UIControlStateNormal];
+    [_reportButton addTarget:self
+                      action:@selector(buttonHandler:)
+            forControlEvents:UIControlEventTouchUpInside];
   }
   return _reportButton;
 }
@@ -225,7 +239,7 @@
                         forState:UIControlStateNormal];
     [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
     [_cancelButton addTarget:self
-                      action:@selector(cancelShare:)
+                      action:@selector(cancelHandler:)
             forControlEvents:UIControlEventTouchUpInside];
   }
   return _cancelButton;
@@ -240,6 +254,11 @@
   return _titlelable;
 }
 
-- (IBAction)cancelShare:(id)sender {
+- (IBAction)buttonHandler:(id)sender {
+  self.buttonActionBlock();
+}
+
+- (IBAction)cancelHandler:(id)sender {
+  [[MXUIActivityWindow standardWindow] show];
 }
 @end
