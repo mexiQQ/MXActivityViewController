@@ -75,10 +75,16 @@
           NSLog(@"it's  here");
         }] show];
 
-###State
+###Install
 
-已完成,待提交到Cocoapods
+####Cocoapods
  
+    pod 'PureLayout', '~> 2.0.5'
+
+####Without Cocoapods
+  
+    like the Demo
+
 ### Dependency 
 
 - purelayout ~> 2.0.5
