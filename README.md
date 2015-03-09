@@ -79,7 +79,7 @@
 
 ####Cocoapods
  
-    pod 'PureLayout', '~> 2.0.5'
+    pod 'MXActivityViewController', '~> 0.0.2'
 
 ####Without Cocoapods
   
