@@ -1,11 +1,11 @@
-##MXActivityViewController
+#MXActivityViewController
   
-### Effect
+## Effect
 
 ![](https://github.com/mexiQQ/MXActivityViewController/blob/master/demo.png)
 ![](https://github.com/mexiQQ/MXActivityViewController/blob/master/demo2.png)
 
-### Features
+## Features
 
 - 最多支持 3x8 个Activity
 - 自适应布局
@@ -75,20 +75,20 @@
           NSLog(@"it's  here");
         }] show];
 
-###Install
+##Install
 
-####Cocoapods
+###Cocoapods
  
     pod 'PureLayout', '~> 2.0.5'
 
-####Without Cocoapods
+###Without Cocoapods
   
     like the Demo
 
-### Dependency 
+## Dependency 
 
 - purelayout ~> 2.0.5
 
-### License
+## License
 
 - MIT
