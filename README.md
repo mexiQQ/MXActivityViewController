@@ -77,11 +77,11 @@
 
 ##Install
 
-###Cocoapods
+####Cocoapods
  
     pod 'PureLayout', '~> 2.0.5'
 
-###Without Cocoapods
+####Without Cocoapods
   
     like the Demo
 
