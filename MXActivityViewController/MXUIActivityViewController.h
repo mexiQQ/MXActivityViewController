@@ -19,5 +19,6 @@ typedef void (^buttonActionBlock)();
                         titles:(NSArray *)titles
                    buttonTitle:(NSString *)buttonTitle
                activityHandler:(void (^)(int))activityBlock
-                 buttonHandler:(buttonActionBlock)buttonActionBlock;
+                 buttonHandler:(buttonActionBlock)buttonActionBlock
+                 cancelHandler:(buttonActionBlock)cancelActionBlock;
 @end

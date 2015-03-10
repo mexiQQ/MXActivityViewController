@@ -13,6 +13,7 @@
 
 #import "MXActivityView.h"
 #import "purelayout.h"
+#import "MXUIActivityWindow.h"
 @interface MXActivityView ()
 @property(nonatomic, strong) UILabel *title;
 @property(nonatomic, strong) UIButton *imageButton;
@@ -97,5 +98,6 @@
 
 - (IBAction)shareAction:(id)sender {
   _block((int)_index);
+  [[MXUIActivityWindow standardWindow] close];
 }
 @end

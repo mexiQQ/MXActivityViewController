@@ -66,20 +66,23 @@
       @"Twitter"
     ];
     [[MXUIActivityWindow shareInstance:images
-        title:titles
-        buttonTitle:@"举报"
-        activityActionBlock:^(int i) {
-          NSLog(@"Activity id is %d", i);
-        }
-        buttonActionBlock:^{
-          NSLog(@"it's  here");
-        }] show];
+    title:titles
+    buttonTitle:@"举报"
+    activityActionBlock:^(int i) {
+      NSLog(@"Activity id is %d", i);
+    }
+    buttonActionBlock:^{
+      NSLog(@"it's  here");
+    }
+    cancelActionBlock:^{
+      NSLog(@"it's there");
+    }] show];
 
 ##Install
 
 ####Cocoapods
  
-    pod 'MXActivityViewController', '~> 0.0.2'
+    pod 'MXActivityViewController', '~> 0.0.3'
 
 ####Without Cocoapods
   

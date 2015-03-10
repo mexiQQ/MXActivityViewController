@@ -15,7 +15,9 @@ typedef void (^buttonActionBlock)();
                                 title:(NSArray *)titles
                           buttonTitle:(NSString *)buttonTitle
                   activityActionBlock:(activityActionBlock)activityActionBlock
-                    buttonActionBlock:(buttonActionBlock)buttonActionBlock;
+                    buttonActionBlock:(buttonActionBlock)buttonActionBlock
+                    cancelActionBlock:(buttonActionBlock)cancelActionBlock;
 - (void)show;
+- (void)close;
 + (MXUIActivityWindow *)standardWindow;
 @end

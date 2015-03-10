@@ -17,6 +17,7 @@
 @interface MXUIActivityViewController ()
 @property(nonatomic, strong) activityActionBlock activityActionBlock;
 @property(nonatomic, strong) buttonActionBlock buttonActionBlock;
+@property(nonatomic, strong) buttonActionBlock cancelActionBlock;
 
 @property(nonatomic, strong) UILabel *titlelable;
 @property(nonatomic, strong) UIButton *reportButton;
@@ -37,7 +38,8 @@
                         titles:(NSArray *)titles
                    buttonTitle:(NSString *)buttonTitle
                activityHandler:(void (^)(int))activityBlock
-                 buttonHandler:(buttonActionBlock)buttonActionBlock {
+                 buttonHandler:(buttonActionBlock)buttonActionBlock
+                 cancelHandler:(buttonActionBlock)cancelActionBlock {
   self = [super init];
   if (self) {
     self.images = images;
@@ -45,6 +47,7 @@
     self.activityActionBlock = activityBlock;
     self.buttonActionBlock = buttonActionBlock;
     self.buttonString = buttonTitle;
+    self.cancelActionBlock = cancelActionBlock;
   }
   return self;
 }
@@ -255,10 +258,12 @@
 }
 
 - (IBAction)buttonHandler:(id)sender {
+  [[MXUIActivityWindow standardWindow] close];
   self.buttonActionBlock();
 }
 
 - (IBAction)cancelHandler:(id)sender {
-  [[MXUIActivityWindow standardWindow] show];
+  [[MXUIActivityWindow standardWindow] close];
+  self.cancelActionBlock();
 }
 @end

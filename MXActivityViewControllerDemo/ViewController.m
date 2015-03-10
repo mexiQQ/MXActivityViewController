@@ -84,6 +84,9 @@
       }
       buttonActionBlock:^{
         NSLog(@"it's  here");
+      }
+      cancelActionBlock:^{
+        NSLog(@"it's there");
       }] show];
 }
 @end
